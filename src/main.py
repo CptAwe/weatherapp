@@ -1,10 +1,5 @@
-from modules import weatherDBConn
-from tables import users
+from objects import User
 
-from sqlalchemy import select
-
-with weatherDBConn() as conn:
-    weather_users = conn.scalar(select(users))
-    
-    print(weather_users)
-    
+admin = User(username="admin")
+admin.fetch()
+print(admin)
