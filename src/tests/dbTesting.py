@@ -1,6 +1,6 @@
 import unittest
 
-from modules import weatherDBConn
+from modules import weatherDBSession
 from sqlalchemy import inspect
 
 class DBtesting(unittest.TestCase):
@@ -9,6 +9,6 @@ class DBtesting(unittest.TestCase):
         """
         Check connection by checking if the essential tables (`users`, `users_metadata`, `weather_data`) exist
         """
-        assert inspect(weatherDBConn._engine).has_table("users")
-        assert inspect(weatherDBConn._engine).has_table("users_metadata")
-        assert inspect(weatherDBConn._engine).has_table("weather_data")
+        assert inspect(weatherDBSession._engine).has_table("users")
+        assert inspect(weatherDBSession._engine).has_table("users_metadata")
+        assert inspect(weatherDBSession._engine).has_table("weather_data")

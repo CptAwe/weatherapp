@@ -1,2 +1,2 @@
-from .dbConnection import weatherDBConn
+from .dbConnection import weatherDBSession
 from .dbTableBase import weatherDBTableBase

@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 
 from settings import DatabaseSettings
 
-class weatherDBConn():
+class weatherDBSession():
     _db_url = URL.create(
         "mysql+pymysql",
         username=DatabaseSettings.user,
@@ -18,7 +18,6 @@ class weatherDBConn():
     )
     
     def __enter__(self):
-        print(self._engine.url.render_as_string(hide_password=False))
         self.session = Session(self._engine)
         return self.session
     
