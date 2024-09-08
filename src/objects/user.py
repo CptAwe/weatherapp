@@ -34,4 +34,8 @@ class User(DbObjBase):
         self.uuid = user.uuid
         self.id = user.id
         self.role = userRoles[user.access]
+    
+    def create(self):
+        """In place creation of user"""
+        pass
         
